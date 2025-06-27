@@ -4,9 +4,8 @@ import { Button } from "@/components/ui/button";
 export const Pricing = () => {
   const plans = [
     {
-      name: "SMB-Startup",
-      originalPrice: 18750, // $225 * 83.33 (approximate INR conversion)
-      pilotPrice: 9375, // 50% discount
+      name: "Small Business",
+      price: 18750, // $225 * 83.33 (approximate INR conversion)
       features: [
         "Core Licensing",
         "250 voice minutes",
@@ -19,8 +18,7 @@ export const Pricing = () => {
     },
     {
       name: "Midmarket",
-      originalPrice: 33320, // $400 * 83.33
-      pilotPrice: 16660, // 50% discount
+      price: 33320, // $400 * 83.33
       features: [
         "Advanced Licensing",
         "375 voice minutes",
@@ -34,8 +32,7 @@ export const Pricing = () => {
     },
     {
       name: "Enterprise",
-      originalPrice: 58331, // $700 * 83.33
-      pilotPrice: 29165, // 50% discount
+      price: 58331, // $700 * 83.33
       features: [
         "Full Enterprise Licensing",
         "1000 voice minutes",
@@ -55,14 +52,11 @@ export const Pricing = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Pilot Pricing
+            Pricing Plans
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Special launch pricing for early adopters. All prices in Indian Rupees (INR) per month.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Choose the perfect plan for your organization. All prices in Indian Rupees (INR) per month.
           </p>
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-400 to-blue-400 text-white rounded-full text-sm font-medium">
-            🎉 Limited Time: 50% OFF for Pilot Program Participants
-          </div>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -89,8 +83,7 @@ export const Pricing = () => {
                 <h3 className="text-2xl font-bold text-center mb-4 text-gray-800">{plan.name}</h3>
                 
                 <div className="text-center mb-6">
-                  <div className="text-gray-400 line-through text-lg">₹{plan.originalPrice.toLocaleString('en-IN')}</div>
-                  <div className="text-4xl font-bold text-gray-800 mb-2">₹{plan.pilotPrice.toLocaleString('en-IN')}</div>
+                  <div className="text-4xl font-bold text-gray-800 mb-2">₹{plan.price.toLocaleString('en-IN')}</div>
                   <div className="text-gray-600">per month</div>
                 </div>
                 
@@ -110,7 +103,7 @@ export const Pricing = () => {
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
                   }`}
                 >
-                  Start Pilot Program
+                  Get Started
                 </Button>
               </div>
             </div>
