@@ -12,9 +12,10 @@ export const Footer = () => {
             <p className="text-gray-400 mb-4 max-w-md">
               India's First Empathetic AI for Workplace Justice, powered by Aegis AI, made in America with 🫶🏽
             </p>
-            <div className="text-sm text-gray-500">
-              <p>Backed by [Investor X]</p>
-              <p>Advised by [Balaji Ramamurthy]</p>
+            <div className="text-sm text-gray-500 space-y-1">
+              <p>Anchored by Open Efficiency, A Washington DC Not For Profit for Whistleblowers</p>
+              <p>Built by Whistleblowers, for Whistleblowers</p>
+              <p>Mission spread by ACER Foundation, Chennai</p>
             </div>
           </div>
           
@@ -41,7 +42,7 @@ export const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Aegis Whistle. Made in America with 🫶🏽 for India's workplace justice.</p>
+          <p>&copy; 2025 Aegis Whistle LLC. Made in America with 🫶🏽 for India's workplace justice.</p>
         </div>
       </div>
     </footer>

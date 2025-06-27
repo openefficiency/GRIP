@@ -30,7 +30,7 @@ export const PilotProgram = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
-            Pilot Program Rewards
+            🎯 Pilot Rewards: Affordable Small Business Pack Trial, even for MidMarket and Enterprises + Priority Feature Voting
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Be among the first 100 companies to shape the future of workplace justice with exclusive benefits
