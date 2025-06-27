@@ -51,10 +51,10 @@ export const Pricing = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Pricing Plans
+            15-Day Affordable Trial
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Choose the perfect plan for your organization. All prices in Indian Rupees (INR) per month.
+            Experience the full power of GRIP with our 15-day trial packages. All prices in Indian Rupees (INR).
           </p>
         </div>
         
@@ -83,7 +83,7 @@ export const Pricing = () => {
                 
                 <div className="text-center mb-6">
                   <div className="text-4xl font-bold text-gray-800 mb-2">₹{plan.price.toLocaleString('en-IN')}</div>
-                  <div className="text-gray-600">per month</div>
+                  <div className="text-gray-600">15-day trial</div>
                 </div>
                 
                 <ul className="space-y-3 mb-8">
@@ -102,7 +102,7 @@ export const Pricing = () => {
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
                   }`}
                 >
-                  Get Started
+                  Start Trial
                 </Button>
               </div>
             </div>
