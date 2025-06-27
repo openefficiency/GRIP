@@ -1,11 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 
 export const Pricing = () => {
   const plans = [
     {
       name: "Small Business",
-      price: 18750, // $225 * 83.33 (approximate INR conversion)
+      price: 20000,
       features: [
         "Core Licensing",
         "250 voice minutes",
@@ -18,7 +17,7 @@ export const Pricing = () => {
     },
     {
       name: "Midmarket",
-      price: 33320, // $400 * 83.33
+      price: 35000,
       features: [
         "Advanced Licensing",
         "375 voice minutes",
@@ -32,7 +31,7 @@ export const Pricing = () => {
     },
     {
       name: "Enterprise",
-      price: 58331, // $700 * 83.33
+      price: 60000,
       features: [
         "Full Enterprise Licensing",
         "1000 voice minutes",
