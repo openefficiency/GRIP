@@ -15,7 +15,7 @@ export const Hero = () => {
       <div className="container mx-auto text-center relative z-10">
         {/* Pilot Badge */}
         <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-400 to-pink-400 text-white rounded-full text-sm font-medium mb-8 animate-fade-in">
-          🎯 Pilot Rewards: 50% discount + Priority Feature Voting
+          🎯 Pilot Rewards: Affordable Small Business Pack Trial, even for MidMarket and Enterprises + Priority Feature Voting
         </div>
         
         {/* Main Heading */}
