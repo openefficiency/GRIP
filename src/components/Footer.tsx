@@ -26,7 +26,14 @@ export const Footer = () => {
               </a>, made in America with 🫶🏽
             </p>
             <div className="text-sm text-gray-500 space-y-1">
-              <p>Anchored by Open Efficiency, A Washington DC Not For Profit for Whistleblowers</p>
+              <p>Anchored by <a 
+                href="https://OpenEfficiency.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 transition-colors underline"
+              >
+                Open Efficiency
+              </a>, A Washington DC Not For Profit for Whistleblowers</p>
               <p>Built by Whistleblowers, for Whistleblowers</p>
               <p>Mission spread by ACER Foundation, Chennai - Pradeep Alexander <a href="tel:+918072822289" className="text-blue-400 hover:text-blue-300 underline">+91 80 728 222 89</a></p>
             </div>
