@@ -8,11 +8,18 @@ export const LanguageSupport = () => {
       color: "from-blue-500 to-blue-600"
     },
     {
+      name: "Hindi",
+      nativeName: "हिन्दी",
+      script: "आपकी आवाज़ महत्वपूर्ण है। सुरक्षित रूप से बोलें।",
+      flag: "🇮🇳",
+      color: "from-orange-500 to-red-500"
+    },
+    {
       name: "Tamil",
       nativeName: "தமிழ்",
       script: "உங்கள் குரல் முக்கியம். பாதுகாப்பாக பேசுங்கள்.",
       flag: "🏛️",
-      color: "from-red-500 to-orange-500"
+      color: "from-red-500 to-pink-500"
     },
     {
       name: "Malayalam", 
@@ -41,10 +48,11 @@ export const LanguageSupport = () => {
     <section className="py-20 px-4 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5">
-        <div className="absolute top-20 left-10 text-6xl">தமிழ்</div>
-        <div className="absolute top-40 right-20 text-6xl">മലയാളം</div>
-        <div className="absolute bottom-40 left-20 text-6xl">ಕನ್ನಡ</div>
-        <div className="absolute bottom-20 right-10 text-6xl">తెలుగు</div>
+        <div className="absolute top-20 left-10 text-6xl">हिन्दी</div>
+        <div className="absolute top-40 right-20 text-6xl">தமிழ்</div>
+        <div className="absolute bottom-60 left-20 text-6xl">മലയാളം</div>
+        <div className="absolute bottom-40 right-10 text-6xl">ಕನ್ನಡ</div>
+        <div className="absolute bottom-20 left-1/2 text-6xl">తెలుగు</div>
       </div>
       
       <div className="container mx-auto relative z-10">
@@ -76,8 +84,8 @@ export const LanguageSupport = () => {
           </p>
         </div>
 
-        {/* Language Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
+        {/* Language Cards Grid - Updated for 6 languages */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {languages.map((language, index) => (
             <div 
               key={index}
@@ -125,7 +133,7 @@ export const LanguageSupport = () => {
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-800">Cultural Intelligence</h3>
               <p className="text-gray-600 leading-relaxed">
-                Understands cultural nuances, workplace hierarchies, and regional communication styles across South India
+                Understands cultural nuances, workplace hierarchies, and regional communication styles across India
               </p>
             </div>
             

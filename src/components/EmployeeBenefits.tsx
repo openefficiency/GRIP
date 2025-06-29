@@ -18,7 +18,7 @@ export const EmployeeBenefits = () => {
     {
       icon: "🌐",
       title: "Multilingual Support",
-      description: "Communicate comfortably in 8 Indian languages"
+      description: "Communicate comfortably in 6 Indian languages including Hindi"
     }
   ];
 
