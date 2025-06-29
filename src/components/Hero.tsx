@@ -21,12 +21,12 @@ export const Hero = () => {
           </div>
           
           {/* Main Heading with special Aegis AI button */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 animate-fade-in">
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               GRIP
             </span>
             <br />
-            <div className="flex items-center justify-center gap-2 mt-4">
+            <div className="flex items-center justify-center gap-2 mt-2">
               <span className="text-2xl md:text-3xl text-gray-500 font-normal">Powered by</span>
               <a 
                 href="https://AegisWhistle.com" 
@@ -48,23 +48,24 @@ export const Hero = () => {
             </div>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 mb-4 animate-fade-in delay-200">
+          {/* Minimal spacing for subtitle */}
+          <p className="text-lg md:text-xl text-gray-600 mb-8 animate-fade-in delay-200 font-light">
             Grievance Redressal & Improvement Program
           </p>
           
-          {/* Scroll indicator */}
-          <div className="animate-bounce mt-16">
-            <ArrowDown className="w-6 h-6 text-gray-400 mx-auto" />
+          {/* Scroll indicator - closer to content */}
+          <div className="animate-bounce mt-8">
+            <ArrowDown className="w-5 h-5 text-gray-400 mx-auto" />
           </div>
         </div>
       </section>
 
       {/* New Separate Section with Different Background */}
-      <section className="py-20 px-4 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 text-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 text-white">
         <div className="container mx-auto text-center">
           {/* New layout as requested */}
           <h2 className="mb-8 animate-fade-in leading-relaxed">
-            <div className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-2">
+            <div className="text-2xl md:text-3xl font-medium mb-3 flex items-center justify-center gap-2">
               Where{" "}
               <a 
                 href="https://AegisWhistle.com" 
@@ -82,7 +83,7 @@ export const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-cyan-400 to-teal-500 opacity-0 group-hover:opacity-25 blur-xl transition-opacity duration-300 -z-10"></div>
               </a>
             </div>
-            <div className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <div className="text-4xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Listens First | Acts Fast
             </div>
             <div className="text-2xl md:text-3xl font-medium text-gray-300">
@@ -90,7 +91,7 @@ export const Hero = () => {
             </div>
           </h2>
           
-          <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto animate-fade-in delay-300 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-4xl mx-auto animate-fade-in delay-300 leading-relaxed">
             India's first empathetic AI for workplace justice, powered by{" "}
             <a 
               href="https://AegisWhistle.com" 
