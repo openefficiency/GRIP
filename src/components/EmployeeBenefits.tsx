@@ -1,4 +1,3 @@
-
 export const EmployeeBenefits = () => {
   const benefits = [
     {
@@ -49,13 +48,37 @@ export const EmployeeBenefits = () => {
         </div>
         
         <div className="text-center mt-12">
-          <div className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl inline-block">
-            <p className="text-lg mb-4">Ready to start a conversation?</p>
-            <p className="text-sm opacity-90 mb-4">Scan to access demo portal - no login needed</p>
-            <div className="w-32 h-32 bg-white/30 rounded-xl mx-auto flex items-center justify-center">
-              <span className="text-xs">QR Code</span>
+          <div className="bg-white/20 backdrop-blur-sm p-8 rounded-2xl inline-block max-w-md">
+            <p className="text-lg mb-4 font-semibold">Ready to start a conversation?</p>
+            <p className="text-sm opacity-90 mb-6">Scan to access demo portal - no login needed</p>
+            
+            {/* QR Code Placeholder */}
+            <div className="w-40 h-40 bg-white rounded-xl mx-auto flex items-center justify-center mb-4 shadow-lg">
+              <div className="text-center">
+                <div className="grid grid-cols-8 gap-1 mb-2">
+                  {Array.from({ length: 64 }).map((_, i) => (
+                    <div 
+                      key={i} 
+                      className={`w-1 h-1 ${Math.random() > 0.5 ? 'bg-black' : 'bg-white'}`}
+                    />
+                  ))}
+                </div>
+                <div className="text-xs text-gray-600 font-mono">QR Code</div>
+              </div>
             </div>
-            <p className="text-sm mt-2 opacity-75">backfeed.xyz</p>
+            
+            <div className="space-y-2">
+              <p className="text-lg font-bold text-white">BackFeed.XYZ</p>
+              <p className="text-sm opacity-75">Your anonymous feedback portal</p>
+              <a 
+                href="https://backfeed.xyz" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block bg-white/30 hover:bg-white/40 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105"
+              >
+                Visit BackFeed.XYZ →
+              </a>
+            </div>
           </div>
         </div>
       </div>
