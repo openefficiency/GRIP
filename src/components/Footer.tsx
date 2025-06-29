@@ -1,3 +1,5 @@
+import { TermsOfServiceModal, PrivacyPolicyModal, SecurityModal } from "@/components/LegalModals";
+
 export const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12 px-4">
@@ -64,32 +66,26 @@ export const Footer = () => {
               </a>. All rights reserved.
             </p>
             
-            {/* Footer Links */}
+            {/* Footer Links with Popups */}
             <div className="flex flex-wrap justify-center gap-6 mb-6">
-              <a 
-                href="https://AegisWhistle.com/terms" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                Terms of Service
-              </a>
-              <a 
-                href="https://AegisWhistle.com/privacy" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                Privacy Policy
-              </a>
-              <a 
-                href="https://AegisWhistle.com/security" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                Security
-              </a>
+              <TermsOfServiceModal>
+                <button className="text-gray-400 hover:text-white transition-colors text-sm cursor-pointer">
+                  Terms of Service
+                </button>
+              </TermsOfServiceModal>
+              
+              <PrivacyPolicyModal>
+                <button className="text-gray-400 hover:text-white transition-colors text-sm cursor-pointer">
+                  Privacy Policy
+                </button>
+              </PrivacyPolicyModal>
+              
+              <SecurityModal>
+                <button className="text-gray-400 hover:text-white transition-colors text-sm cursor-pointer">
+                  Security
+                </button>
+              </SecurityModal>
+              
               <a 
                 href="https://AegisWhistle.com" 
                 target="_blank" 
