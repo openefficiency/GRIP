@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import { PilotWaitlistModal } from "@/components/PilotWaitlistModal";
 
 export const Hero = () => {
   return (
@@ -81,18 +82,14 @@ export const Hero = () => {
         
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in delay-700">
-          <a 
-            href="https://AegisWhistle.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
+          <PilotWaitlistModal>
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               Apply for Aegis AI Pilot Waitlist
             </Button>
-          </a>
+          </PilotWaitlistModal>
           <a 
             href="https://BackFeed.XYZ" 
             target="_blank" 

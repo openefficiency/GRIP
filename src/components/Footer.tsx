@@ -1,4 +1,5 @@
 import { TermsOfServiceModal, PrivacyPolicyModal, SecurityModal } from "@/components/LegalModals";
+import { PilotWaitlistModal } from "@/components/PilotWaitlistModal";
 
 export const Footer = () => {
   return (
@@ -90,14 +91,11 @@ export const Footer = () => {
             
             {/* Right side - CTA Button */}
             <div>
-              <a 
-                href="https://AegisWhistle.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                Apply for Aegis AI Pilot Waitlist
-              </a>
+              <PilotWaitlistModal>
+                <button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Apply for Aegis AI Pilot Waitlist
+                </button>
+              </PilotWaitlistModal>
             </div>
           </div>
           

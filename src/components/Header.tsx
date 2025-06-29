@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { PilotWaitlistModal } from "@/components/PilotWaitlistModal";
 
 export const Header = () => {
   return (
@@ -19,18 +20,14 @@ export const Header = () => {
           
           {/* Navigation Buttons */}
           <div className="flex items-center gap-4">
-            <a 
-              href="https://AegisWhistle.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
+            <PilotWaitlistModal>
               <Button 
                 variant="outline"
                 className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
               >
                 Apply for Aegis AI Pilot Waitlist
               </Button>
-            </a>
+            </PilotWaitlistModal>
             
             <a 
               href="https://BackFeed.XYZ" 

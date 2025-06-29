@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { PilotWaitlistModal } from "@/components/PilotWaitlistModal";
 
 export const PilotProgram = () => {
   const perks = [
@@ -61,18 +62,14 @@ export const PilotProgram = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a 
-              href="https://AegisWhistle.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
+            <PilotWaitlistModal>
               <Button 
                 size="lg" 
                 className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 Apply for Aegis AI Pilot Waitlist
               </Button>
-            </a>
+            </PilotWaitlistModal>
             <a href="tel:+918072822289">
               <Button 
                 variant="outline" 
