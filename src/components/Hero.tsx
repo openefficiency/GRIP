@@ -50,23 +50,30 @@ export const Hero = () => {
           Grievance Redressal & Improvement Program
         </p>
         
-        <h2 className="text-2xl md:text-4xl font-semibold mb-8 text-gray-800 animate-fade-in delay-300">
-          "Where{" "}
-          <a 
-            href="https://AegisWhistle.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 group relative"
-          >
-            <span className="bg-gradient-to-r from-emerald-500 via-cyan-500 to-teal-600 bg-clip-text text-transparent hover:from-emerald-400 hover:via-cyan-400 hover:to-teal-500 transition-all duration-300 transform group-hover:scale-105">
-              Aegis AI
-            </span>
-            <span className="text-lg">📣</span>
-            {/* Subtle glow for secondary mention */}
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-cyan-500 to-teal-600 opacity-0 group-hover:opacity-15 blur-lg transition-opacity duration-300 -z-10"></div>
-          </a>
-          {" "}Listens First, Acts Fast – <br />
-          Protecting Voices Before They Become Whispers"
+        {/* Updated text sizing - smaller first line, large second line, smaller third line */}
+        <h2 className="mb-8 text-gray-800 animate-fade-in delay-300 leading-relaxed">
+          <div className="text-lg md:text-xl font-medium mb-2">
+            "Where{" "}
+            <a 
+              href="https://AegisWhistle.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 group relative"
+            >
+              <span className="bg-gradient-to-r from-emerald-500 via-cyan-500 to-teal-600 bg-clip-text text-transparent hover:from-emerald-400 hover:via-cyan-400 hover:to-teal-500 transition-all duration-300 transform group-hover:scale-105">
+                Aegis AI
+              </span>
+              <span className="text-sm">📣</span>
+              {/* Subtle glow for secondary mention */}
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-cyan-500 to-teal-600 opacity-0 group-hover:opacity-15 blur-lg transition-opacity duration-300 -z-10"></div>
+            </a>
+          </div>
+          <div className="text-3xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Listens First, Acts Fast –
+          </div>
+          <div className="text-lg md:text-xl font-medium">
+            Protecting Voices Before They Become Whispers"
+          </div>
         </h2>
         
         <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-4xl mx-auto animate-fade-in delay-500">
