@@ -8,16 +8,27 @@ export const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              GRIP by <a 
-                href="https://AegisWhistle.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:from-blue-300 hover:to-purple-300 transition-all duration-300"
-              >
-                Aegis AI
-              </a>
-            </h3>
+            <div className="flex items-center gap-2 mb-4">
+              <h3 className="text-2xl font-bold text-white">
+                GRIP
+              </h3>
+              <div className="flex items-center gap-1">
+                <span className="text-sm text-gray-300">Powered by</span>
+                <a 
+                  href="https://AegisWhistle.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 group"
+                >
+                  <span className="text-sm font-semibold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                    Aegis AI
+                  </span>
+                  <div className="w-4 h-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center text-white text-xs group-hover:scale-110 transition-all duration-300">
+                    📣
+                  </div>
+                </a>
+              </div>
+            </div>
             <p className="text-gray-300 mb-4 max-w-md">
               India's first empathetic AI for workplace justice, powered by <a 
                 href="https://AegisWhistle.com" 
