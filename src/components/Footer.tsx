@@ -2,7 +2,7 @@ import { TermsOfServiceModal, PrivacyPolicyModal, SecurityModal } from "@/compon
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12 px-4">
+    <footer className="bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white py-12 px-4">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
@@ -17,7 +17,7 @@ export const Footer = () => {
                 Aegis AI
               </a>
             </h3>
-            <p className="text-gray-400 mb-4 max-w-md">
+            <p className="text-gray-300 mb-4 max-w-md">
               India's First Empathetic AI for Workplace Justice, powered by <a 
                 href="https://AegisWhistle.com" 
                 target="_blank" 
@@ -27,7 +27,7 @@ export const Footer = () => {
                 Aegis AI
               </a>, made in America with 🫶🏽
             </p>
-            <div className="text-sm text-gray-500 space-y-1">
+            <div className="text-sm text-gray-400 space-y-1">
               <p>Anchored by <a 
                 href="https://OpenEfficiency.org" 
                 target="_blank" 
@@ -44,19 +44,20 @@ export const Footer = () => {
           {/* Company Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-gray-300">
               <li><a href="https://AegisWhistle.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">AegisWhistle LLC</a></li>
               <li><a href="tel:+918072822289" className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
         </div>
         
-        {/* Enhanced Footer Bottom Section */}
-        <div className="border-t border-gray-800 mt-8 pt-8 space-y-6">
-          {/* Copyright and Links */}
-          <div className="text-center">
-            <p className="text-gray-400 mb-4">
-              &copy; 2025 <a 
+        {/* Footer Bottom Section - Matching AegisWhistle.com style */}
+        <div className="border-t border-purple-700/50 mt-8 pt-8">
+          {/* Copyright and Links Row */}
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-6">
+            {/* Left side - Copyright */}
+            <div className="text-gray-300 text-sm">
+              © 2025 <a 
                 href="https://AegisWhistle.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -64,44 +65,47 @@ export const Footer = () => {
               >
                 AegisWhistle LLC
               </a>. All rights reserved.
-            </p>
+            </div>
             
-            {/* Footer Links with Popups */}
-            <div className="flex flex-wrap justify-center gap-6 mb-6">
+            {/* Center - Legal Links */}
+            <div className="flex flex-wrap justify-center gap-6">
               <TermsOfServiceModal>
-                <button className="text-gray-400 hover:text-white transition-colors text-sm cursor-pointer">
+                <button className="text-gray-300 hover:text-white transition-colors text-sm cursor-pointer">
                   Terms of Service
                 </button>
               </TermsOfServiceModal>
               
               <PrivacyPolicyModal>
-                <button className="text-gray-400 hover:text-white transition-colors text-sm cursor-pointer">
+                <button className="text-gray-300 hover:text-white transition-colors text-sm cursor-pointer">
                   Privacy Policy
                 </button>
               </PrivacyPolicyModal>
               
               <SecurityModal>
-                <button className="text-gray-400 hover:text-white transition-colors text-sm cursor-pointer">
+                <button className="text-gray-300 hover:text-white transition-colors text-sm cursor-pointer">
                   Security
                 </button>
               </SecurityModal>
-              
+            </div>
+            
+            {/* Right side - CTA Button */}
+            <div>
               <a 
                 href="https://AegisWhistle.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium"
+                className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 Apply for Aegis AI Pilot Waitlist
               </a>
             </div>
           </div>
           
-          {/* Security Notice */}
-          <div className="bg-gray-800/50 rounded-lg p-6 text-center">
+          {/* Security Notice - Full Width */}
+          <div className="bg-purple-800/30 border border-purple-600/30 rounded-lg p-4 text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
               <span className="text-green-400 text-lg">🔒</span>
-              <h5 className="text-lg font-semibold text-green-400">Military-grade Security</h5>
+              <span className="text-green-400 font-semibold">Military-grade Security:</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               All communications are encrypted end-to-end. Your identity remains completely anonymous through Tor networks and zero-knowledge proofs.
