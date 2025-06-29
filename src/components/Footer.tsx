@@ -49,15 +49,68 @@ export const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 <a 
-            href="https://AegisWhistle.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-blue-400 hover:text-blue-300 transition-colors"
-          >
-            Aegis AI
-          </a> LLC. Made in America with 🫶🏽 for India's workplace justice.</p>
+        {/* Enhanced Footer Bottom Section */}
+        <div className="border-t border-gray-800 mt-8 pt-8 space-y-6">
+          {/* Copyright and Links */}
+          <div className="text-center">
+            <p className="text-gray-400 mb-4">
+              &copy; 2025 <a 
+                href="https://AegisWhistle.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 transition-colors"
+              >
+                AegisWhistle LLC
+              </a>. All rights reserved.
+            </p>
+            
+            {/* Footer Links */}
+            <div className="flex flex-wrap justify-center gap-6 mb-6">
+              <a 
+                href="https://AegisWhistle.com/terms" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors text-sm"
+              >
+                Terms of Service
+              </a>
+              <a 
+                href="https://AegisWhistle.com/privacy" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors text-sm"
+              >
+                Privacy Policy
+              </a>
+              <a 
+                href="https://AegisWhistle.com/security" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors text-sm"
+              >
+                Security
+              </a>
+              <a 
+                href="https://AegisWhistle.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium"
+              >
+                Apply for Aegis AI Pilot Waitlist
+              </a>
+            </div>
+          </div>
+          
+          {/* Security Notice */}
+          <div className="bg-gray-800/50 rounded-lg p-6 text-center">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <span className="text-green-400 text-lg">🔒</span>
+              <h5 className="text-lg font-semibold text-green-400">Military-grade Security</h5>
+            </div>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              All communications are encrypted end-to-end. Your identity remains completely anonymous through Tor networks and zero-knowledge proofs.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
