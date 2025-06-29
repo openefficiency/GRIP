@@ -103,7 +103,7 @@ export const Pricing = () => {
                         : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
                     }`}
                   >
-                    Kickstart with our partner
+                    Kickstart with our Partner
                   </Button>
                 </a>
               </div>
@@ -115,7 +115,7 @@ export const Pricing = () => {
           <p className="text-gray-600 mb-4">Need a custom solution?</p>
           <a href="tel:+918072822289">
             <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white">
-              Talk to our partner
+              Talk to our Partner
             </Button>
           </a>
         </div>
