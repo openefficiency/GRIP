@@ -1,48 +1,62 @@
 export const LanguageSupport = () => {
-  const languages = [
+  // Center languages (prominent)
+  const centerLanguages = [
     {
       name: "English",
       nativeName: "English",
       script: "Your voice matters. Speak up safely.",
       flag: "🇺🇸",
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      name: "Hindi",
-      nativeName: "हिन्दी",
-      script: "आपकी आवाज़ महत्वपूर्ण है। सुरक्षित रूप से बोलें।",
-      flag: "🇮🇳",
-      color: "from-orange-500 to-red-500"
+      color: "from-blue-500 to-blue-600",
+      prominent: true
     },
     {
       name: "Tamil",
       nativeName: "தமிழ்",
       script: "உங்கள் குரல் முக்கியம். பாதுகாப்பாக பேசுங்கள்.",
       flag: "🏛️",
-      color: "from-red-500 to-pink-500"
+      color: "from-red-500 to-pink-500",
+      prominent: true
+    }
+  ];
+
+  // Side languages (smaller)
+  const sideLanguages = [
+    {
+      name: "Hindi",
+      nativeName: "हिन्दी",
+      script: "आपकी आवाज़ महत्वपूर्ण है।",
+      flag: "🇮🇳",
+      color: "from-orange-500 to-red-500",
+      side: "left"
     },
     {
       name: "Malayalam", 
       nativeName: "മലയാളം",
-      script: "നിങ്ങളുടെ ശബ്ദം പ്രധാനമാണ്. സുരക്ഷിതമായി സംസാരിക്കുക.",
+      script: "നിങ്ങളുടെ ശബ്ദം പ്രധാനമാണ്।",
       flag: "🌴",
-      color: "from-green-500 to-emerald-500"
+      color: "from-green-500 to-emerald-500",
+      side: "left"
     },
     {
       name: "Kannada",
       nativeName: "ಕನ್ನಡ",
-      script: "ನಿಮ್ಮ ಧ್ವನಿ ಮುಖ್ಯವಾಗಿದೆ. ಸುರಕ್ಷಿತವಾಗಿ ಮಾತನಾಡಿ.",
+      script: "ನಿಮ್ಮ ಧ್ವನಿ ಮುಖ್ಯವಾಗಿದೆ।",
       flag: "🏺",
-      color: "from-yellow-500 to-amber-500"
+      color: "from-yellow-500 to-amber-500",
+      side: "right"
     },
     {
       name: "Telugu",
       nativeName: "తెలుగు", 
-      script: "మీ గొంతు ముఖ్యమైనది. సురక్షితంగా మాట్లాడండి.",
+      script: "మీ గొంతు ముఖ్యమైనది।",
       flag: "🎭",
-      color: "from-purple-500 to-violet-500"
+      color: "from-purple-500 to-violet-500",
+      side: "right"
     }
   ];
+
+  const leftLanguages = sideLanguages.filter(lang => lang.side === "left");
+  const rightLanguages = sideLanguages.filter(lang => lang.side === "right");
 
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 relative overflow-hidden">
@@ -84,44 +98,98 @@ export const LanguageSupport = () => {
           </p>
         </div>
 
-        {/* Language Cards Grid - Updated for 6 languages */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {languages.map((language, index) => (
-            <div 
-              key={index}
-              className="group relative bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100 overflow-hidden"
-            >
-              {/* Background gradient overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${language.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-3xl`}></div>
-              
-              {/* Flag/Icon */}
-              <div className="text-4xl mb-4 text-center transform group-hover:scale-110 transition-transform duration-300">
-                {language.flag}
-              </div>
-              
-              {/* Language Name */}
-              <h3 className="text-xl font-bold text-center mb-2 text-gray-800 group-hover:text-gray-900 transition-colors">
-                {language.name}
-              </h3>
-              
-              {/* Native Script */}
-              <div className="text-center mb-4">
-                <p className={`text-2xl font-bold bg-gradient-to-r ${language.color} bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300 inline-block`}>
-                  {language.nativeName}
-                </p>
-              </div>
-              
-              {/* Sample Text */}
-              <div className="text-center">
-                <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+        {/* Language Layout - Prominent Center with Side Languages */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mb-16 max-w-7xl mx-auto">
+          
+          {/* Left Side Languages */}
+          <div className="flex flex-col gap-6 lg:w-1/4">
+            {leftLanguages.map((language, index) => (
+              <div 
+                key={index}
+                className="group relative bg-white rounded-2xl p-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${language.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`}></div>
+                
+                <div className="text-2xl mb-2 text-center">{language.flag}</div>
+                <h3 className="text-lg font-bold text-center mb-2 text-gray-800">{language.name}</h3>
+                <div className="text-center mb-3">
+                  <p className={`text-xl font-bold bg-gradient-to-r ${language.color} bg-clip-text text-transparent`}>
+                    {language.nativeName}
+                  </p>
+                </div>
+                <p className="text-xs text-gray-600 text-center leading-relaxed">
                   "{language.script}"
                 </p>
               </div>
-              
-              {/* Hover effect border */}
-              <div className={`absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-gradient-to-r group-hover:${language.color.replace('from-', 'border-').replace('to-', '')} opacity-0 group-hover:opacity-50 transition-opacity duration-300`}></div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Center - Prominent English and Tamil */}
+          <div className="flex flex-col md:flex-row gap-8 lg:w-1/2 justify-center">
+            {centerLanguages.map((language, index) => (
+              <div 
+                key={index}
+                className="group relative bg-white rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-4 border-2 border-gray-100 overflow-hidden min-h-[400px] flex flex-col justify-center"
+              >
+                {/* Enhanced background gradient overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${language.color} opacity-0 group-hover:opacity-15 transition-opacity duration-500 rounded-3xl`}></div>
+                
+                {/* Prominent Flag/Icon */}
+                <div className="text-6xl md:text-7xl mb-6 text-center transform group-hover:scale-110 transition-transform duration-300">
+                  {language.flag}
+                </div>
+                
+                {/* Prominent Language Name */}
+                <h3 className="text-2xl md:text-3xl font-bold text-center mb-4 text-gray-800 group-hover:text-gray-900 transition-colors">
+                  {language.name}
+                </h3>
+                
+                {/* Extra Large Native Script */}
+                <div className="text-center mb-6">
+                  <p className={`text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r ${language.color} bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300 inline-block leading-tight`}>
+                    {language.nativeName}
+                  </p>
+                </div>
+                
+                {/* Prominent Sample Text */}
+                <div className="text-center">
+                  <p className="text-base md:text-lg text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors font-medium">
+                    "{language.script}"
+                  </p>
+                </div>
+                
+                {/* Enhanced hover effect border */}
+                <div className={`absolute inset-0 rounded-3xl border-4 border-transparent group-hover:border-opacity-50 transition-all duration-300`} 
+                     style={{borderImage: `linear-gradient(135deg, ${language.color.includes('blue') ? '#3b82f6, #1d4ed8' : '#ef4444, #ec4899'}) 1`}}></div>
+                
+                {/* Spotlight effect */}
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-white opacity-0 group-hover:opacity-20 rounded-full blur-3xl transition-opacity duration-500"></div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right Side Languages */}
+          <div className="flex flex-col gap-6 lg:w-1/4">
+            {rightLanguages.map((language, index) => (
+              <div 
+                key={index}
+                className="group relative bg-white rounded-2xl p-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${language.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`}></div>
+                
+                <div className="text-2xl mb-2 text-center">{language.flag}</div>
+                <h3 className="text-lg font-bold text-center mb-2 text-gray-800">{language.name}</h3>
+                <div className="text-center mb-3">
+                  <p className={`text-xl font-bold bg-gradient-to-r ${language.color} bg-clip-text text-transparent`}>
+                    {language.nativeName}
+                  </p>
+                </div>
+                <p className="text-xs text-gray-600 text-center leading-relaxed">
+                  "{language.script}"
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Features Section */}
