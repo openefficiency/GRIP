@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 export const PilotProgram = () => {
@@ -19,7 +18,7 @@ export const PilotProgram = () => {
       icon: "🗳️"
     },
     {
-      title: "15-Day Free Trial",
+      title: "15-Day Discounted Startup Pack Trial",
       description: "Try our Discounted Startup pack for 15 days before sign-up",
       icon: "⏰"
     }
@@ -65,15 +64,17 @@ export const PilotProgram = () => {
               size="lg" 
               className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
-              Join the Pilot Program
+              Apply for Aegis AI Pilot Waitlist
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 text-lg rounded-full transition-all duration-300"
-            >
-              Schedule Demo
-            </Button>
+            <a href="tel:+918072822289">
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-2 border-white text-white bg-orange-600 hover:bg-orange-700 px-8 py-4 text-lg rounded-full transition-all duration-300"
+              >
+                Schedule Demo
+              </Button>
+            </a>
           </div>
           
           <p className="text-sm mt-6 opacity-75">

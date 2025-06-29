@@ -48,36 +48,56 @@ export const EmployeeBenefits = () => {
         </div>
         
         <div className="text-center mt-12">
-          <div className="bg-white/20 backdrop-blur-sm p-8 rounded-2xl inline-block max-w-md">
-            <p className="text-lg mb-4 font-semibold">Ready to start a conversation?</p>
-            <p className="text-sm opacity-90 mb-6">Scan to access demo portal - no login needed</p>
-            
-            {/* QR Code Placeholder */}
-            <div className="w-40 h-40 bg-white rounded-xl mx-auto flex items-center justify-center mb-4 shadow-lg">
-              <div className="text-center">
-                <div className="grid grid-cols-8 gap-1 mb-2">
-                  {Array.from({ length: 64 }).map((_, i) => (
-                    <div 
-                      key={i} 
-                      className={`w-1 h-1 ${Math.random() > 0.5 ? 'bg-black' : 'bg-white'}`}
-                    />
-                  ))}
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-3xl max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Left side - Text content */}
+              <div className="text-left">
+                <h3 className="text-3xl font-bold mb-4 text-blue-400">
+                  Ready to start a conversation with Aegis AI?
+                </h3>
+                <p className="text-lg mb-4 text-gray-300">
+                  Scan to access demo portal - no login needed
+                </p>
+                
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm">📱</span>
+                  </div>
+                  <span className="text-blue-300">Scan with your phone camera</span>
+                  <span className="text-gray-400">or</span>
+                  <a 
+                    href="https://backfeed.xyz" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 underline"
+                  >
+                    visit BackFeed.xyz →
+                  </a>
                 </div>
-                <div className="text-xs text-gray-600 font-mono">QR Code</div>
+                
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <span className="text-green-400 text-sm">Live Demo Available</span>
+                  </div>
+                  <p className="text-gray-400 text-sm">No registration required</p>
+                </div>
               </div>
-            </div>
-            
-            <div className="space-y-2">
-              <p className="text-lg font-bold text-white">BackFeed.XYZ</p>
-              <p className="text-sm opacity-75">Your anonymous feedback portal</p>
-              <a 
-                href="https://backfeed.xyz" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block bg-white/30 hover:bg-white/40 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105"
-              >
-                Visit BackFeed.XYZ →
-              </a>
+              
+              {/* Right side - QR Code */}
+              <div className="flex justify-center">
+                <div className="bg-white p-6 rounded-2xl shadow-2xl">
+                  <img 
+                    src="/image.png" 
+                    alt="QR Code for BackFeed.xyz" 
+                    className="w-48 h-48 object-contain"
+                  />
+                  <div className="text-center mt-4">
+                    <p className="text-lg font-bold text-gray-800">BackFeed.xyz</p>
+                    <p className="text-sm text-gray-600">Demo Portal Access</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

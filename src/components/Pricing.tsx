@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 export const Pricing = () => {
@@ -112,9 +111,11 @@ export const Pricing = () => {
         
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-4">Need a custom solution?</p>
-          <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white">
-            Contact Sales
-          </Button>
+          <a href="tel:+918072822289">
+            <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white">
+              Talk to our partner
+            </Button>
+          </a>
         </div>
       </div>
     </section>
