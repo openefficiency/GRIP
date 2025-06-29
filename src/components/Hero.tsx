@@ -50,10 +50,10 @@ export const Hero = () => {
           Grievance Redressal & Improvement Program
         </p>
         
-        {/* Updated text sizing - smaller first line, large second line, smaller third line */}
+        {/* Updated text sizing - smaller first line, large second line, smaller third line - NO QUOTES */}
         <h2 className="mb-8 text-gray-800 animate-fade-in delay-300 leading-relaxed">
           <div className="text-lg md:text-xl font-medium mb-2">
-            "Where{" "}
+            Where{" "}
             <a 
               href="https://AegisWhistle.com" 
               target="_blank" 
@@ -72,7 +72,7 @@ export const Hero = () => {
             Listens First, Acts Fast –
           </div>
           <div className="text-lg md:text-xl font-medium">
-            Protecting Voices Before They Become Whispers"
+            Protecting Voices Before They Become Whispers
           </div>
         </h2>
         
