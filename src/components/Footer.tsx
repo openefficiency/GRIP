@@ -43,7 +43,7 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="https://AegisWhistle.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">About</a></li>
+              <li><a href="https://AegisWhistle.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">AegisWhistle LLC</a></li>
               <li><a href="tel:+918072822289" className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
