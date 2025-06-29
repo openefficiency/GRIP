@@ -5,7 +5,7 @@ export const Features = () => {
     {
       icon: MessageSquare,
       title: "AI with a Heart (Not Just Code)",
-      description: "Aegis doesn't just 'process' grievances – it hears frustration in 8 Indian languages, detects burnout in voice tones, and escalates with human-like discretion.",
+      description: "Aegis doesn't just 'process' grievances – it understands frustration in 8 Indian languages, detects burnout in voice tones, and escalates with human-like discretion.",
       highlight: "NLP trained on Indian workplace dialogues (not Western datasets)"
     },
     {

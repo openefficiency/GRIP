@@ -9,7 +9,7 @@ export const HowItWorks = () => {
     {
       number: "02",
       title: "AI Analysis",
-      description: "Flags urgent issues (harassment, payroll) vs. systemic trends (OT burnout)",
+      description: "Flags urgent issues (harassment, payroll) vs. systemic trends (overtime burnout)",
       color: "from-purple-500 to-pink-500"
     },
     {

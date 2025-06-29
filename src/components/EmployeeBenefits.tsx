@@ -8,7 +8,7 @@ export const EmployeeBenefits = () => {
     {
       icon: "🤖",
       title: "AI That Cares",
-      description: "Aegis learns your issues to prevent future problems"
+      description: "Aegis learns from your issues to prevent future problems"
     },
     {
       icon: "🔒",
@@ -18,7 +18,7 @@ export const EmployeeBenefits = () => {
     {
       icon: "🌐",
       title: "Multilingual Support",
-      description: "Communicate in 8 Indian languages comfortably"
+      description: "Communicate comfortably in 8 Indian languages"
     }
   ];
 

@@ -12,9 +12,9 @@ export const Hero = () => {
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-purple-400 rounded-full opacity-20 animate-pulse delay-1000"></div>
       
       <div className="container mx-auto text-center relative z-10">
-        {/* Pilot Badge - Reduced text size */}
-        <div className="inline-flex items-center px-3 py-2 bg-gradient-to-r from-orange-400 to-pink-400 text-white rounded-full text-xs md:text-sm font-medium mb-8 animate-fade-in max-w-4xl">
-          🎯 Pilot Rewards: Affordable Small Business Pack Trial, even for MidMarket and Enterprises + Priority Feature Voting
+        {/* Pilot Badge - Improved readability */}
+        <div className="inline-flex items-center px-4 py-3 bg-gradient-to-r from-orange-400 to-pink-400 text-white rounded-full text-sm md:text-base font-medium mb-8 animate-fade-in max-w-5xl mx-auto">
+          🎯 Pilot Rewards: Affordable Small Business Pack Trial for MidMarket and Enterprise + Priority Feature Voting
         </div>
         
         {/* Main Heading */}
@@ -46,7 +46,7 @@ export const Hero = () => {
         </h2>
         
         <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-4xl mx-auto animate-fade-in delay-500">
-          India's First Empathetic AI for Workplace Justice, powered by <a 
+          India's first empathetic AI for workplace justice, powered by <a 
             href="https://AegisWhistle.com" 
             target="_blank" 
             rel="noopener noreferrer"

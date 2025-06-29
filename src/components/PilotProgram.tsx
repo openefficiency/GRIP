@@ -9,7 +9,7 @@ export const PilotProgram = () => {
     },
     {
       title: "Future Credit",
-      description: "Pilot clients get additional voice minutes post full pack launch",
+      description: "Pilot clients get additional voice minutes after full pack launch",
       icon: "💳"
     },
     {
@@ -19,7 +19,7 @@ export const PilotProgram = () => {
     },
     {
       title: "15-Day Discounted Startup Pack Trial",
-      description: "Try our Discounted Startup pack for 15 days before sign-up",
+      description: "Try our discounted startup pack for 15 days before sign-up",
       icon: "⏰"
     }
   ];
@@ -28,9 +28,9 @@ export const PilotProgram = () => {
     <section className="py-20 px-4 bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          {/* Reduced heading size and improved layout */}
+          {/* Improved heading layout */}
           <div className="inline-flex items-center px-4 py-3 bg-gradient-to-r from-orange-400 to-pink-400 text-white rounded-full text-sm md:text-base font-medium mb-6 max-w-5xl">
-            🎯 Pilot Rewards: Affordable Small Business Pack Trial, even for MidMarket and Enterprises + Priority Feature Voting
+            🎯 Pilot Rewards: Affordable Small Business Pack Trial for MidMarket and Enterprise + Priority Feature Voting
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Be among the first 100 companies to shape the future of workplace justice with exclusive benefits

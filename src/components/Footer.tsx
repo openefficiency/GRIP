@@ -18,7 +18,7 @@ export const Footer = () => {
               </a>
             </h3>
             <p className="text-gray-300 mb-4 max-w-md">
-              India's First Empathetic AI for Workplace Justice, powered by <a 
+              India's first empathetic AI for workplace justice, powered by <a 
                 href="https://AegisWhistle.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -35,8 +35,8 @@ export const Footer = () => {
                 className="text-blue-400 hover:text-blue-300 transition-colors underline"
               >
                 Open Efficiency
-              </a>, A Washington DC Not For Profit for Whistleblowers</p>
-              <p>Built by Whistleblowers, for Whistleblowers</p>
+              </a>, a Washington DC not-for-profit for whistleblowers</p>
+              <p>Built by whistleblowers, for whistleblowers</p>
               <p>Mission spread by ACER Foundation, Chennai - Pradeep Alexander <a href="tel:+918072822289" className="text-blue-400 hover:text-blue-300 underline">+91 80 728 222 89</a></p>
             </div>
           </div>

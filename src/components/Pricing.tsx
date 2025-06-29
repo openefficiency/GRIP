@@ -103,7 +103,7 @@ export const Pricing = () => {
                         : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
                     }`}
                   >
-                    Kickstart with our Partner
+                    Get Started with Our Partner
                   </Button>
                 </a>
               </div>
@@ -124,7 +124,7 @@ export const Pricing = () => {
               size="lg"
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
-              Talk to our Partner
+              Talk to Our Partner
             </Button>
           </a>
           <p className="text-gray-500 mt-4 text-lg">
