@@ -26,8 +26,27 @@ export const Features = () => {
     <section className="py-20 px-4 bg-white">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Core Messaging Pillars
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Why{" "}
+            </span>
+            <a 
+              href="https://AegisWhistle.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block relative group"
+            >
+              <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent hover:from-emerald-400 hover:via-teal-400 hover:to-cyan-400 transition-all duration-300 transform group-hover:scale-105 group-hover:drop-shadow-lg">
+                Aegis AI
+              </span>
+              {/* Glowing effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 -z-10"></div>
+              {/* Underline effect */}
+              <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 group-hover:w-full transition-all duration-300"></div>
+            </a>
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              ?
+            </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Unlike clunky 'compliance tools', GRIP boosts engagement – employees trust our AI because it demonstrates genuine empathy
