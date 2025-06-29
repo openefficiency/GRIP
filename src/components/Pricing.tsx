@@ -111,13 +111,25 @@ export const Pricing = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">Need a custom solution?</p>
+        {/* Enhanced Custom Solution Section */}
+        <div className="text-center mt-20 bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-12 max-w-4xl mx-auto">
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+            Need a Custom Solution?
+          </h3>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Let's discuss your unique requirements and create a tailored plan that fits your organization perfectly.
+          </p>
           <a href="tel:+918072822289">
-            <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
               Talk to our Partner
             </Button>
           </a>
+          <p className="text-gray-500 mt-4 text-lg">
+            📞 Call us directly at <a href="tel:+918072822289" className="text-blue-600 hover:text-blue-700 font-semibold">+91 80 728 222 89</a>
+          </p>
         </div>
       </div>
     </section>
