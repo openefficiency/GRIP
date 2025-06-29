@@ -95,15 +95,17 @@ export const Pricing = () => {
                   ))}
                 </ul>
                 
-                <Button 
-                  className={`w-full py-3 rounded-xl font-medium transition-all duration-300 ${
-                    plan.popular 
-                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white' 
-                      : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
-                  }`}
-                >
-                  Get Started
-                </Button>
+                <a href="tel:+918072822289">
+                  <Button 
+                    className={`w-full py-3 rounded-xl font-medium transition-all duration-300 ${
+                      plan.popular 
+                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white' 
+                        : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
+                    }`}
+                  >
+                    Kickstart with our partner
+                  </Button>
+                </a>
               </div>
             </div>
           ))}
