@@ -12,8 +12,8 @@ export const Hero = () => {
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-purple-400 rounded-full opacity-20 animate-pulse delay-1000"></div>
       
       <div className="container mx-auto text-center relative z-10">
-        {/* Pilot Badge */}
-        <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-400 to-pink-400 text-white rounded-full text-sm font-medium mb-8 animate-fade-in">
+        {/* Pilot Badge - Reduced text size */}
+        <div className="inline-flex items-center px-3 py-2 bg-gradient-to-r from-orange-400 to-pink-400 text-white rounded-full text-xs md:text-sm font-medium mb-8 animate-fade-in max-w-4xl">
           🎯 Pilot Rewards: Affordable Small Business Pack Trial, even for MidMarket and Enterprises + Priority Feature Voting
         </div>
         

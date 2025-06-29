@@ -28,9 +28,10 @@ export const PilotProgram = () => {
     <section className="py-20 px-4 bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+          {/* Reduced heading size and improved layout */}
+          <div className="inline-flex items-center px-4 py-3 bg-gradient-to-r from-orange-400 to-pink-400 text-white rounded-full text-sm md:text-base font-medium mb-6 max-w-5xl">
             🎯 Pilot Rewards: Affordable Small Business Pack Trial, even for MidMarket and Enterprises + Priority Feature Voting
-          </h2>
+          </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Be among the first 100 companies to shape the future of workplace justice with exclusive benefits
           </p>
