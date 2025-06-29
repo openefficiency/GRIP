@@ -1,4 +1,3 @@
-
 export const HowItWorks = () => {
   const steps = [
     {

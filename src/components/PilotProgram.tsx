@@ -60,17 +60,23 @@ export const PilotProgram = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            <a 
+              href="https://AegisWhistle.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
             >
-              Apply for Aegis AI Pilot Waitlist
-            </Button>
+              <Button 
+                size="lg" 
+                className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
+                Apply for Aegis AI Pilot Waitlist
+              </Button>
+            </a>
             <a href="tel:+918072822289">
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-2 border-white text-white bg-orange-600 hover:bg-orange-700 px-8 py-4 text-lg rounded-full transition-all duration-300"
+                className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-orange-600 px-8 py-4 text-lg rounded-full transition-all duration-300"
               >
                 Schedule Demo
               </Button>

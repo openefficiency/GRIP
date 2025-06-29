@@ -1,4 +1,3 @@
-
 import { MessageSquare, Search, FileText } from "lucide-react";
 
 export const Features = () => {

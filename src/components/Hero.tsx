@@ -3,7 +3,7 @@ import { ArrowDown } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden pt-20">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 opacity-10"></div>
       
@@ -19,7 +19,14 @@ export const Hero = () => {
         
         {/* Main Heading */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-fade-in">
-          GRIP by Aegis AI
+          GRIP by <a 
+            href="https://AegisWhistle.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 transition-all duration-300 cursor-pointer"
+          >
+            Aegis AI
+          </a>
         </h1>
         
         <p className="text-xl md:text-2xl text-gray-600 mb-4 animate-fade-in delay-200">
@@ -27,31 +34,57 @@ export const Hero = () => {
         </p>
         
         <h2 className="text-2xl md:text-4xl font-semibold mb-8 text-gray-800 animate-fade-in delay-300">
-          "Where Aegis AI Listens First, Acts Fast – <br />
+          "Where <a 
+            href="https://AegisWhistle.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+          >
+            Aegis AI
+          </a> Listens First, Acts Fast – <br />
           Protecting Voices Before They Become Whispers"
         </h2>
         
         <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-4xl mx-auto animate-fade-in delay-500">
-          India's First Empathetic AI for Workplace Justice, powered by Aegis AI, made in America with 🫶🏽
+          India's First Empathetic AI for Workplace Justice, powered by <a 
+            href="https://AegisWhistle.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold"
+          >
+            Aegis AI
+          </a>, made in America with 🫶🏽
           <br />
           Your 24/7 multilingual HR ally – combining confidential whistleblowing with proactive employee care
         </p>
         
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in delay-700">
-          <Button 
-            size="lg" 
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          <a 
+            href="https://AegisWhistle.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
           >
-            Apply for Aegis AI Pilot Waitlist
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-8 py-6 text-lg rounded-full transition-all duration-300"
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              Apply for Aegis AI Pilot Waitlist
+            </Button>
+          </a>
+          <a 
+            href="https://BackFeed.XYZ" 
+            target="_blank" 
+            rel="noopener noreferrer"
           >
-            Watch Aegis AI in Action
-          </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-8 py-6 text-lg rounded-full transition-all duration-300"
+            >
+              Watch Aegis AI in Action
+            </Button>
+          </a>
         </div>
         
         {/* Scroll indicator */}
