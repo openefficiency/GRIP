@@ -5,8 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
-import { CheckCircle, ArrowRight, Loader2 } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 interface PilotWaitlistModalProps {
   children: React.ReactNode;
@@ -14,8 +13,6 @@ interface PilotWaitlistModalProps {
 
 export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -81,65 +78,6 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch('https://formspree.io/f/movwrqdy', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          company: formData.company,
-          role: formData.role,
-          teamSize: formData.teamSize,
-          budget: formData.budget,
-          pilotPlan: formData.pilotPlan,
-          objectives: formData.objectives,
-          formType: 'Aegis AI Pilot Waitlist Application'
-        }),
-      });
-
-      if (response.ok) {
-        setIsOpen(false);
-        setShowSuccessDialog(true);
-        // Reset form
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          company: "",
-          role: "",
-          teamSize: "",
-          budget: "",
-          pilotPlan: "",
-          objectives: ""
-        });
-      } else {
-        throw new Error('Submission failed');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('There was an error submitting your application. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleSeeAegisAI = () => {
-    setShowSuccessDialog(false);
-    window.open('https://BackFeed.XYZ', '_blank');
-  };
-
-  const isFormValid = formData.firstName && formData.lastName && formData.email && 
-                     formData.company && formData.role && formData.teamSize && 
-                     formData.budget && formData.pilotPlan && formData.objectives;
-
   return (
     <>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -168,7 +106,15 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
             </p>
           </DialogHeader>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form 
+            name="aegis-ai-pilot-waitlist" 
+            method="POST" 
+            data-netlify="true"
+            className="space-y-6"
+          >
+            {/* Hidden input for Netlify form detection */}
+            <input type="hidden" name="form-name" value="aegis-ai-pilot-waitlist" />
+
             {/* Name Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -177,6 +123,7 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
                 </Label>
                 <Input
                   id="firstName"
+                  name="first_name"
                   type="text"
                   placeholder="Enter your first name"
                   value={formData.firstName}
@@ -191,6 +138,7 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
                 </Label>
                 <Input
                   id="lastName"
+                  name="last_name"
                   type="text"
                   placeholder="Enter your last name"
                   value={formData.lastName}
@@ -208,6 +156,7 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
               </Label>
               <Input
                 id="email"
+                name="email"
                 type="email"
                 placeholder="your.email@company.com"
                 value={formData.email}
@@ -224,6 +173,7 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
               </Label>
               <Input
                 id="company"
+                name="company"
                 type="text"
                 placeholder="Your company name"
                 value={formData.company}
@@ -251,6 +201,7 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
                     ))}
                   </SelectContent>
                 </Select>
+                <input type="hidden" name="role" value={formData.role} />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="teamSize" className="text-sm font-medium text-gray-700">
@@ -268,6 +219,7 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
                     ))}
                   </SelectContent>
                 </Select>
+                <input type="hidden" name="team_size" value={formData.teamSize} />
               </div>
             </div>
 
@@ -288,6 +240,7 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
                   ))}
                 </SelectContent>
               </Select>
+              <input type="hidden" name="budget" value={formData.budget} />
             </div>
 
             {/* Pilot Plan Selection */}
@@ -312,7 +265,7 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
                             <label className="flex items-center space-x-2 cursor-pointer">
                               <input
                                 type="radio"
-                                name="pilotPlan"
+                                name="pilot_plan"
                                 value={plan.name}
                                 checked={formData.pilotPlan === plan.name}
                                 onChange={(e) => handleInputChange('pilotPlan', e.target.value)}
@@ -339,6 +292,7 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
               </Label>
               <Textarea
                 id="objectives"
+                name="objectives"
                 placeholder="Tell us about your goals and how you plan to use Aegis AI..."
                 value={formData.objectives}
                 onChange={(e) => handleInputChange('objectives', e.target.value)}
@@ -375,20 +329,9 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
             {/* Submit Button */}
             <Button
               type="submit"
-              disabled={!isFormValid || isSubmitting}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                  Submitting Application...
-                </>
-              ) : (
-                <>
-                  Apply for Aegis AI Pilot Waitlist
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </>
-              )}
+              Apply for Aegis AI Pilot Waitlist →
             </Button>
 
             {/* Privacy Notice */}
@@ -399,39 +342,6 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
           </form>
         </DialogContent>
       </Dialog>
-
-      {/* Success Dialog */}
-      <AlertDialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
-        <AlertDialogContent className="max-w-md">
-          <AlertDialogHeader className="text-center">
-            <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-              <CheckCircle className="w-8 h-8 text-green-600" />
-            </div>
-            <AlertDialogTitle className="text-2xl font-bold text-gray-800">
-              Application Submitted!
-            </AlertDialogTitle>
-            <AlertDialogDescription className="text-gray-600 leading-relaxed">
-              Thank you for applying to the Aegis AI pilot program. We'll review your application and get back to you soon.
-              <br /><br />
-              Would you like to see Aegis AI in action right now?
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter className="flex-col sm:flex-row gap-3">
-            <AlertDialogCancel 
-              onClick={() => setShowSuccessDialog(false)}
-              className="w-full sm:w-auto"
-            >
-              Maybe Later
-            </AlertDialogCancel>
-            <AlertDialogAction
-              onClick={handleSeeAegisAI}
-              className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-            >
-              Yes, Show Me Aegis AI →
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
     </>
   );
 };
