@@ -1,3 +1,0 @@
-# Netlify redirects file
-# This ensures that all client-side routes (like /thank-you) are handled by React Router
-/*    /index.html   200
