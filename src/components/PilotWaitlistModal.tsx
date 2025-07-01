@@ -23,6 +23,8 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
     company: "",
     role: "",
     teamSize: "",
+    budget: "",
+    pilotPlan: "",
     objectives: ""
   });
 
@@ -47,6 +49,34 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
     "1000+ employees"
   ];
 
+  const budgetRanges = [
+    "Under ₹20,000",
+    "₹20,000 - ₹50,000",
+    "₹50,000 - ₹1,00,000",
+    "Above ₹1,00,000"
+  ];
+
+  const pilotPlans = [
+    {
+      id: "startup",
+      name: "Startup (<100 employees)",
+      regularPrice: "₹40,000/mo",
+      pilotPrice: "₹20,000/mo"
+    },
+    {
+      id: "mid-market",
+      name: "Mid-Market (100-500)",
+      regularPrice: "₹70,000/mo",
+      pilotPrice: "₹35,000/mo"
+    },
+    {
+      id: "enterprise",
+      name: "Enterprise (500+)",
+      regularPrice: "₹1,20,000/mo",
+      pilotPrice: "₹60,000/mo"
+    }
+  ];
+
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
@@ -68,6 +98,8 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
           company: formData.company,
           role: formData.role,
           teamSize: formData.teamSize,
+          budget: formData.budget,
+          pilotPlan: formData.pilotPlan,
           objectives: formData.objectives,
           formType: 'Aegis AI Pilot Waitlist Application'
         }),
@@ -84,6 +116,8 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
           company: "",
           role: "",
           teamSize: "",
+          budget: "",
+          pilotPlan: "",
           objectives: ""
         });
       } else {
@@ -103,7 +137,8 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
   };
 
   const isFormValid = formData.firstName && formData.lastName && formData.email && 
-                     formData.company && formData.role && formData.teamSize && formData.objectives;
+                     formData.company && formData.role && formData.teamSize && 
+                     formData.budget && formData.pilotPlan && formData.objectives;
 
   return (
     <>
@@ -233,6 +268,67 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
                     ))}
                   </SelectContent>
                 </Select>
+              </div>
+            </div>
+
+            {/* Budget Range */}
+            <div className="space-y-2">
+              <Label htmlFor="budget" className="text-sm font-medium text-gray-700">
+                What is your budget range (INR)? <span className="text-red-500">*</span>
+              </Label>
+              <Select value={formData.budget} onValueChange={(value) => handleInputChange('budget', value)}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select budget range" />
+                </SelectTrigger>
+                <SelectContent>
+                  {budgetRanges.map((range) => (
+                    <SelectItem key={range} value={range}>
+                      {range}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Pilot Plan Selection */}
+            <div className="space-y-2">
+              <Label className="text-sm font-medium text-gray-700">
+                Which plan are you interested in? <span className="text-red-500">*</span>
+              </Label>
+              <div className="bg-gray-50 p-4 rounded-lg border">
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse">
+                    <thead>
+                      <tr className="border-b border-gray-200">
+                        <th className="text-left py-2 px-3 font-medium text-gray-700">Plan</th>
+                        <th className="text-left py-2 px-3 font-medium text-gray-700">Regular Price</th>
+                        <th className="text-left py-2 px-3 font-medium text-gray-700">Pilot Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {pilotPlans.map((plan) => (
+                        <tr key={plan.id} className="border-b border-gray-100">
+                          <td className="py-3 px-3">
+                            <label className="flex items-center space-x-2 cursor-pointer">
+                              <input
+                                type="radio"
+                                name="pilotPlan"
+                                value={plan.name}
+                                checked={formData.pilotPlan === plan.name}
+                                onChange={(e) => handleInputChange('pilotPlan', e.target.value)}
+                                className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+                                required
+                              />
+                              <span className="text-sm font-medium text-gray-700">{plan.name}</span>
+                            </label>
+                          </td>
+                          <td className="py-3 px-3 text-sm text-gray-600 line-through">{plan.regularPrice}</td>
+                          <td className="py-3 px-3 text-sm font-semibold text-green-600">{plan.pilotPrice}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
 
