@@ -23,6 +23,8 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
     company: "",
     role: "",
     teamSize: "",
+    preferredPlan: "",
+    budget: "",
     objectives: ""
   });
 
@@ -47,6 +49,35 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
     "1000+ employees"
   ];
 
+  const plans = [
+    {
+      name: "Startups (<100 employees)",
+      regularPrice: "₹40,000/mo",
+      pilotPrice: "₹20,000/mo",
+      value: "startup"
+    },
+    {
+      name: "Mid-Market (100-500)",
+      regularPrice: "₹70,000/mo",
+      pilotPrice: "₹35,000/mo",
+      value: "midmarket"
+    },
+    {
+      name: "Enterprise (500+)",
+      regularPrice: "₹1,20,000/mo",
+      pilotPrice: "₹60,000/mo",
+      value: "enterprise"
+    }
+  ];
+
+  const budgetRanges = [
+    "₹20,000 - ₹35,000/mo",
+    "₹35,000 - ₹60,000/mo",
+    "₹60,000 - ₹1,00,000/mo",
+    "₹1,00,000+/mo",
+    "Need custom pricing"
+  ];
+
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
@@ -68,6 +99,8 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
           company: formData.company,
           role: formData.role,
           team_size: formData.teamSize,
+          preferred_plan: formData.preferredPlan,
+          budget: formData.budget,
           objectives: formData.objectives,
           formType: 'Aegis AI Pilot Waitlist Application'
         }),
@@ -84,6 +117,8 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
           company: "",
           role: "",
           teamSize: "",
+          preferredPlan: "",
+          budget: "",
           objectives: ""
         });
       } else {
@@ -107,7 +142,8 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
   };
 
   const isFormValid = formData.firstName && formData.lastName && formData.email && 
-                     formData.company && formData.role && formData.teamSize && formData.objectives;
+                     formData.company && formData.role && formData.teamSize && 
+                     formData.preferredPlan && formData.budget && formData.objectives;
 
   return (
     <>
@@ -115,7 +151,7 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
         <DialogTrigger asChild>
           {children}
         </DialogTrigger>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
           <DialogHeader className="space-y-4 pb-6">
             <DialogTitle className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Apply for Aegis AI Pilot Waitlist
@@ -138,6 +174,28 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
           </DialogHeader>
 
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Pilot Pricing Section */}
+            <div className="bg-gradient-to-r from-orange-50 to-pink-50 p-6 rounded-xl border border-orange-200">
+              <div className="text-center mb-4">
+                <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-400 to-pink-400 text-white rounded-full text-sm font-medium mb-3">
+                  🎯 50% discount for first 6 months | Only 47/100 spots remaining
+                </div>
+                <h4 className="text-xl font-bold text-gray-800 mb-4">Pilot Pricing</h4>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-4">
+                {plans.map((plan, index) => (
+                  <div key={index} className="bg-white p-4 rounded-lg border border-gray-200 text-center">
+                    <h5 className="font-semibold text-gray-800 mb-2">{plan.name}</h5>
+                    <div className="space-y-1">
+                      <div className="text-sm text-gray-500 line-through">{plan.regularPrice}</div>
+                      <div className="text-lg font-bold text-green-600">{plan.pilotPrice}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Name Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -240,10 +298,60 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
               </div>
             </div>
 
+            {/* Preferred Plan and Budget */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="preferredPlan" className="text-sm font-medium text-gray-700">
+                  Preferred Plan <span className="text-red-500">*</span>
+                </Label>
+                <Select value={formData.preferredPlan} onValueChange={(value) => handleInputChange('preferredPlan', value)}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select preferred plan" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {plans.map((plan) => (
+                      <SelectItem key={plan.value} value={plan.value}>
+                        {plan.name} - {plan.pilotPrice}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="budget" className="text-sm font-medium text-gray-700">
+                  Budget Range <span className="text-red-500">*</span>
+                </Label>
+                <Select value={formData.budget} onValueChange={(value) => handleInputChange('budget', value)}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select budget range" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {budgetRanges.map((range) => (
+                      <SelectItem key={range} value={range}>
+                        {range}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+
             {/* Objectives */}
             <div className="space-y-2">
               <Label htmlFor="objectives" className="text-sm font-medium text-gray-700">
-                What are your objectives with Aegis AI? <span className="text-red-500">*</span>
+                What are your objectives with{" "}
+                <a 
+                  href="https://AegisWhistle.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block relative group"
+                >
+                  <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent hover:from-emerald-400 hover:via-teal-400 hover:to-cyan-400 transition-all duration-300 transform group-hover:scale-105 font-semibold">
+                    Aegis AI
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 opacity-0 group-hover:opacity-15 blur-lg transition-opacity duration-300 -z-10"></div>
+                </a>
+                ? <span className="text-red-500">*</span>
               </Label>
               <Textarea
                 id="objectives"
@@ -263,7 +371,20 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Early access to advanced Aegis AI conversation platform</span>
+                  <span className="text-gray-700">Early access to advanced{" "}
+                    <a 
+                      href="https://AegisWhistle.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-block relative group"
+                    >
+                      <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent hover:from-emerald-400 hover:via-teal-400 hover:to-cyan-400 transition-all duration-300 transform group-hover:scale-105 font-semibold">
+                        Aegis AI
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 opacity-0 group-hover:opacity-15 blur-lg transition-opacity duration-300 -z-10"></div>
+                    </a>
+                    {" "}conversation platform
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
@@ -293,7 +414,19 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
                 </>
               ) : (
                 <>
-                  Apply for Aegis AI Pilot Waitlist
+                  Apply for{" "}
+                  <a 
+                    href="https://AegisWhistle.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block relative group"
+                  >
+                    <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent hover:from-emerald-300 hover:via-teal-300 hover:to-cyan-300 transition-all duration-300 transform group-hover:scale-105 font-semibold">
+                      Aegis AI
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 opacity-0 group-hover:opacity-15 blur-lg transition-opacity duration-300 -z-10"></div>
+                  </a>
+                  {" "}Pilot Waitlist
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </>
               )}
@@ -301,8 +434,19 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
 
             {/* Privacy Notice */}
             <p className="text-sm text-gray-500 text-center leading-relaxed">
-              By submitting this form, you agree to receive updates about the Aegis AI pilot program. 
-              We respect your privacy and won't share your information.
+              By submitting this form, you agree to receive updates about the{" "}
+              <a 
+                href="https://AegisWhistle.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block relative group"
+              >
+                <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent hover:from-emerald-400 hover:via-teal-400 hover:to-cyan-400 transition-all duration-300 transform group-hover:scale-105 font-semibold">
+                  Aegis AI
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 opacity-0 group-hover:opacity-15 blur-lg transition-opacity duration-300 -z-10"></div>
+              </a>
+              {" "}pilot program. We respect your privacy and won't share your information.
             </p>
           </form>
         </DialogContent>
@@ -359,7 +503,19 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
               onClick={handleWatchAegisAI}
               className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
             >
-              Watch Aegis AI in Action →
+              Watch{" "}
+              <a 
+                href="https://AegisWhistle.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block relative group"
+              >
+                <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent hover:from-emerald-300 hover:via-teal-300 hover:to-cyan-300 transition-all duration-300 transform group-hover:scale-105 font-semibold">
+                  Aegis AI
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 opacity-0 group-hover:opacity-15 blur-lg transition-opacity duration-300 -z-10"></div>
+              </a>
+              {" "}in Action →
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
