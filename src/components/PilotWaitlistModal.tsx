@@ -110,6 +110,7 @@ export const PilotWaitlistModal = ({ children }: PilotWaitlistModalProps) => {
             name="aegis-ai-pilot-waitlist" 
             method="POST" 
             data-netlify="true"
+            action="/thank-you"
             className="space-y-6"
           >
             {/* Hidden input for Netlify form detection */}
