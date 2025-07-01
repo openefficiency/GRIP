@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { LanguageSupport } from "@/components/LanguageSupport";
 import { HowItWorks } from "@/components/HowItWorks";
+import { AegisAIInteraction } from "@/components/AegisAIInteraction";
 import { Pricing } from "@/components/Pricing";
 import { EmployeeBenefits } from "@/components/EmployeeBenefits";
 import { PilotProgram } from "@/components/PilotProgram";
@@ -16,8 +17,9 @@ const Index = () => {
       <Features />
       <LanguageSupport />
       <HowItWorks />
-      <EmployeeBenefits />
+      <AegisAIInteraction />
       <Pricing />
+      <EmployeeBenefits />
       <PilotProgram />
       <Footer />
     </div>
