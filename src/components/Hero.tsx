@@ -50,7 +50,7 @@ export const Hero = () => {
           
           {/* Minimal spacing for subtitle */}
           <p className="text-lg md:text-xl text-gray-600 mb-8 animate-fade-in delay-200 font-light">
-            Grievance Redressal & Improvement Program
+            Grievance Redressal & Intelligence Program
           </p>
           
           {/* Scroll indicator - closer to content */}
